@@ -10,12 +10,18 @@ https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner/releases/tag/v1.0
 tar -zxvf montreal-forced-aligner_linux.tar.gz
 ```
 
-rename `./montreal-forced-aligner/lib/libpython3.6m.so.1.0` to `libpython3.6m.so`.
+copy `./montreal-forced-aligner/lib/libpython3.6m.so.1.0`and put it in the same dir and name it `libpython3.6m.so`
 
 ## Usage
 
 ```bash
 ./montreal-forced-aligner/bin/mfa_align   corpus_dir   dict_path   acoustic_model   output_dir
+```
+
+or
+
+```bash
+./montreal-forced-aligner/bin/mfa_train_and_align    corpus_dir    dict_path    output_dir
 ```
 
 acoustic_model: https://montreal-forced-aligner.readthedocs.io/en/latest/pretrained_models.html
@@ -30,4 +36,8 @@ acoustic_model: https://montreal-forced-aligner.readthedocs.io/en/latest/pretrai
 
 ```bash
  ./montreal-forced-aligner/bin/mfa_align ./AISHELL3 ./lexicon/pinyin-lexicon.txt mandarin.zip ./textgrid
+```
+
+```bash
+./montreal-forced-aligner/bin/mfa_train_and_align    ./AISHELL3-r    ./lexicon/pinyin-lexicon-r.txt    ./textgrid
 ```
